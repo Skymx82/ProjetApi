@@ -14,6 +14,4 @@ if (isset($_POST["actionInscription"]))
 getAllMedoc() ;
 getAllInscription();
 getAllActivite();
-
-
 ?>
