@@ -6,14 +6,14 @@
   function getAllActivite()
   {
     $activites = selectActivite(); // modèle
-    include("vues/vue_activite.php");
+    include("../vues/vue_activite.php");
   }
 
   function getOneActivite()
   {
     $id = $_GET["id"];
     $activite = selectActiviteById($id); // modèle
-    include("vues/vue_activite.php");
+    include("../vues/vue_activite.php");
   }
 
   // ============================================================
@@ -21,8 +21,8 @@
   // ============================================================
   function getAllInscription()
   {
-    $inscriptions = selectIncription(); // modèle (selectIncription sans s)
-    include("vues/vue_inscription.php");
+    $inscriptions = selectIncription(); // modèle
+    include("../vues/vue_inscription.php");
   }
 
   function addInscription()
@@ -40,14 +40,14 @@
   function getAllMedoc()
   {
     $medicaments = selectMedoc(); // modèle
-    include("vues/vue_medoc.php");
+    include("../vues/vue_medoc.php");
   }
 
   function getOneMedoc()
   {
     $id = $_GET["id"];
     $medicament = selectMedocById($id); // modèle
-    include("vues/vue_medoc.php");
+    include("../vues/vue_medoc.php");
   }
 
   // ============================================================
@@ -57,7 +57,7 @@
   {
     $id = $_GET["id"];
     $effets = selectEffetTherapeutiqueById($id); // modèle
-    include("vues/vue_effet_therapeutique.php");
+    include("../vues/vue_effet_therapeutique.php");
   }
 
   // ============================================================
@@ -67,7 +67,7 @@
   {
     $id = $_GET["id"];
     $effets = selectEffetSecondaireById($id); // modèle
-    include("vues/vue_effet_secondaire.php");
+    include("../vues/vue_effet_secondaire.php");
   }
 
   // ============================================================
@@ -77,7 +77,6 @@
   {
     $id = $_GET["id"];
     $interactions = selectInteractionById($id); // modèle
-    include("vues/vue_interaction.php");
+    include("../vues/vue_interaction.php");
   }
-
 ?>
