@@ -12,7 +12,7 @@
     $etu=$_POST["id"];
     $nom = $_POST["nom"] ;
     $prenom = $_POST["prenom"] ;
-    $bac = $_POST["bac"]);
+    $bac = $_POST["bac"];
     updateEtu($etu, $nom, $prenom, $bac) ; //modèle
   }
 
@@ -25,7 +25,7 @@
 
   function getAllEtu()
   {
-    $etudiants=selectEtu() ; //modèle
+    $etudiants=selectMedoc() ; //modèle
   include ("vues/vue.php");
 
 
