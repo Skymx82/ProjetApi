@@ -79,4 +79,8 @@
     $interactions = selectInteractionById($id); // modèle
     include("Vue/vue_interaction.php");
   }
+
+  function acceuil(){
+    include("Vue/index.php");
+  }
 ?>
