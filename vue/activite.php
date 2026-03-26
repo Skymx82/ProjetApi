@@ -20,6 +20,9 @@
 
     <main>
         <section>
+          
+        </section>
+        <section>
             <h2>Liste des activités</h2>
             <div id="content">
                 <?php
