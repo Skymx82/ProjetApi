@@ -1,7 +1,7 @@
 <?php
   function selectMedoc()
   {
-    $url = "http://127.0.0.1/PROJETApi/ProjetApi/medicament";    
+    $url = "http://127.0.0.1/PROJETApi/api/medicament";    
     $options = array(
       'http' =>array(
       'header' => "Content_type: application/x-www-form-urlencoded\r\n",
