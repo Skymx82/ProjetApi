@@ -1,6 +1,6 @@
 <?php
   require_once "modele/modele.php"; 
-  require_once "controleur/medicament_control.php"; 
+  require_once "controleur/controleur.php"; 
 
 if (isset($_POST["actionEtu"]))
 {
