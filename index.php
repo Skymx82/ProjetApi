@@ -2,29 +2,18 @@
   require_once "modele/modele.php"; 
   require_once "controleur/controleur.php"; 
 
-if (isset($_POST["actionEtu"]))
+if (isset($_POST["actionInscription"]))
 {
-	if ($_POST["actionEtu"]=="inscrire")
+	if ($_POST["actionInscription"]=="inscrire")
 	{
-		addEtu() ; //contrôleur
+		addInscription() ;
 
 	}
-	else
-		if ($_POST["actionEtu"]=="modifier")
-		{
-			updEtu() ; //contrôleur
-		}
-		else
-		{
-			//cas suppr
-			delEtu() ; //contrôleur
-		}
 }
 
+getAllMedoc() ;
+getAllInscription();
+getAllActivite();
 
-// cas défaut : affichage de tous
-getAllEtu() ; //contrôleur
-
-?>
 
 ?>
