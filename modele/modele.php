@@ -1,7 +1,7 @@
 <?php
   function selectMedoc()
   {
-    $url = "http://127.0.0.1/PROJETApi/api/medicament";    
+    $url = "http://127.0.0.1/ProjetApi/ProjetApi/api/medicament.php";
     $options = array(
       'http' =>array(
       'header' => "Content_type: application/x-www-form-urlencoded\r\n",
@@ -9,14 +9,13 @@
     );
     $context = stream_context_create($options);
     $medicaments = file_get_contents($url, false, $context);
-    $medicaments=substr($medicaments,1); // pour supprimer le '/' du début json
-    return $medicaments ;
+    return $medicaments;
   }
 
   // Retourne une seul activités par id
   function selectMedocById($id)
   {
-    $url = "http://127.0.0.1/PROJETApi/ProjetApi/medicament?id=" . $id;    
+    $url = "http://127.0.0.1/ProjetApi/ProjetApi/medicament?id=" . $id;    
     $options = array(
       'http' => array(
       'header' => "Content_type: application/x-www-form-urlencoded\r\n",
@@ -31,7 +30,7 @@
   // Retourne toutes les activites
   function selectActivite()
   {
-    $url = "http://127.0.0.1/PROJETApi/ProjetApi/Activites";    
+    $url = "http://127.0.0.1/ProjetApi/ProjetApi/Activites";    
     $options = array(
       'http' => array(
       'header' => "Content_type: application/x-www-form-urlencoded\r\n",
@@ -46,7 +45,7 @@
   // Retourne une seul activités par id
   function selectActiviteById($id)
   {
-    $url = "http://127.0.0.1/PROJETApi/ProjetApi/Activites?id=" . $id;    
+    $url = "http://127.0.0.1/ProjetApi/ProjetApi/Activites?id=" . $id;    
     $options = array(
       'http' => array(
       'header' => "Content_type: application/x-www-form-urlencoded\r\n",
@@ -60,7 +59,7 @@
 
   function selectIncription()
   {
-    $url = "http://127.0.0.1/PROJETApi/ProjetApi/inscription.php";    
+    $url = "http://127.0.0.1/ProjetApi/ProjetApi/inscription.php";    
     $options = array(
       'http' =>array(
       'header' => "Content_type: application/x-www-form-urlencoded\r\n",
@@ -76,7 +75,7 @@
   // Retourne les effets thérapeutiques par id de médicament
   function selectEffetTherapeutiqueById($id)
   {
-    $url = "http://127.0.0.1/PROJETApi/ProjetApi/effet_therapeutique.php?id=" . $id;
+    $url = "http://127.0.0.1/ProjetApi/ProjetApi/effet_therapeutique.php?id=" . $id;
     $options = array(
       'http' => array(
       'header' => "Content_type: application/x-www-form-urlencoded\r\n",
@@ -91,7 +90,7 @@
   // Retourne les effets secondaires par id de médicament
   function selectEffetSecondaireById($id)
   {
-    $url = "http://127.0.0.1/PROJETApi/ProjetApi/effet_secondaire.php?id=" . $id;
+    $url = "http://127.0.0.1/ProjetApi/ProjetApi/effet_secondaire.php?id=" . $id;
     $options = array(
       'http' => array(
       'header' => "Content_type: application/x-www-form-urlencoded\r\n",
@@ -106,7 +105,7 @@
   // Retourne les interactions par id de médicament
   function selectInteractionById($id)
   {
-    $url = "http://127.0.0.1/PROJETApi/ProjetApi/interaction.php?id=" . $id;
+    $url = "http://127.0.0.1/ProjetApi/ProjetApi/interaction.php?id=" . $id;
     $options = array(
       'http' => array(
       'header' => "Content_type: application/x-www-form-urlencoded\r\n",
@@ -120,7 +119,7 @@
 
   function insertInscription($nom, $prenom, $mail, $ville)
   {
-    $url = 'http://127.0.0.1/PROJETApi/ProjetApi/inscription.php';
+    $url = 'http://127.0.0.1/ProjetApi/ProjetApi/inscription.php';
     $data = array('nom' => $nom, 'prenom' => $prenom, 'mail' => $mail, 'ville' => $ville);
 
     
