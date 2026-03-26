@@ -1,6 +1,6 @@
 <?php
-  require_once "modele/medicament_mod.php"; 
-  require_once "controleur/medicament_control.php"; 
+  require_once "modele/modele.php"; 
+  require_once "controleur/controleur.php"; 
 
   // cas défaut : affichage de tous
   getAllEtu() ; //contrôleur
