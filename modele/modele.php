@@ -73,6 +73,51 @@
 
   }
 
+  // Retourne les effets thérapeutiques par id de médicament
+  function selectEffetTherapeutiqueById($id)
+  {
+    $url = "http://127.0.0.1/PROJETApi/ProjetApi/effet_therapeutique.php?id=" . $id;
+    $options = array(
+      'http' => array(
+      'header' => "Content_type: application/x-www-form-urlencoded\r\n",
+      'method' => 'GET')
+    );
+    $context = stream_context_create($options);
+    $effets = file_get_contents($url, false, $context);
+    $effets = substr($effets, 1); // pour supprimer le '/' du début json
+    return $effets;
+  }
+
+  // Retourne les effets secondaires par id de médicament
+  function selectEffetSecondaireById($id)
+  {
+    $url = "http://127.0.0.1/PROJETApi/ProjetApi/effet_secondaire.php?id=" . $id;
+    $options = array(
+      'http' => array(
+      'header' => "Content_type: application/x-www-form-urlencoded\r\n",
+      'method' => 'GET')
+    );
+    $context = stream_context_create($options);
+    $effets = file_get_contents($url, false, $context);
+    $effets = substr($effets, 1); // pour supprimer le '/' du début json
+    return $effets;
+  }
+
+  // Retourne les interactions par id de médicament
+  function selectInteractionById($id)
+  {
+    $url = "http://127.0.0.1/PROJETApi/ProjetApi/interaction.php?id=" . $id;
+    $options = array(
+      'http' => array(
+      'header' => "Content_type: application/x-www-form-urlencoded\r\n",
+      'method' => 'GET')
+    );
+    $context = stream_context_create($options);
+    $interactions = file_get_contents($url, false, $context);
+    $interactions = substr($interactions, 1); // pour supprimer le '/' du début json
+    return $interactions;
+  }
+
   function insertInscription($nom, $prenom, $mail, $ville)
   {
     $url = 'http://127.0.0.1/PROJETApi/ProjetApi/inscription.php';
