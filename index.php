@@ -3,6 +3,6 @@
   require_once "controleur/controleur.php"; 
 
   // cas défaut : affichage de tous
-  getAllEtu() ; //contrôleur
+  getAllMedoc() ; //contrôleur
 
 ?>
