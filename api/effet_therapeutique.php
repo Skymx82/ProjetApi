@@ -8,21 +8,21 @@
       case 'GET':
         if (!empty($_GET["id"])) {
                 $id = intval($_GET["id"]);
-                getInteraction($id);
+                getEffetThera($id);
             } 
             break;
     }
 
-    function getInteraction($id = null)
+    function getEffetThera($id = null)
     {
         global $conn;
 
         if ($id) {
-            $query = "SELECT * FROM INTERACTION WHERE id_medicament1 = :id";
+            $query = "SELECT * FROM EFFET_THERAPEUTIQUE WHERE id_medicament = :id";
             $stmt = $conn->prepare($query);
             $stmt->execute([':id' => $id]);
         } else {
-            $query = "SELECT * FROM INTERACTION ORDER BY nom";
+            $query = "SELECT * FROM EFFET_THERAPEUTIQUE ORDER BY nom";
             $stmt = $conn->prepare($query);
             $stmt->execute();
         }
