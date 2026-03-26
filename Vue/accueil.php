@@ -12,7 +12,7 @@
         <h1>Pharmacie GSB</h1>
         <nav>
             <ul>
-                <li><a href="index.php">Accueil</a></li>
+                <li><a href="accueil.php">Accueil</a></li>
                 <li><a href="medicament.php">Médicament</a></li>
                 <li><a href="activite.php">Activités</a></li>
             </ul>
@@ -21,7 +21,6 @@
 
     <main>
 
-        <!-- Section héro / présentation -->
         <section id="hero">
             <h2>Bienvenue à la Pharmacie GSB</h2>
             <p>
@@ -32,7 +31,6 @@
             </p>
         </section>
 
-        <!-- Section services -->
         <section id="services">
             <h2>Nos Services</h2>
             <div id="services-grid">
@@ -72,7 +70,6 @@
             </div>
         </section>
 
-        <!-- Section informations pratiques -->
         <section id="infos">
             <h2>Informations Pratiques</h2>
             <div id="content">
@@ -80,7 +77,6 @@
                 <p><strong>📞 Téléphone :</strong> 01 23 45 67 89</p>
                 <p><strong>🕐 Horaires :</strong> Lundi – Vendredi : 8h30 – 19h30 | Samedi : 9h – 18h</p>
                 <?php
-                    // Vous pouvez afficher ici des informations dynamiques depuis votre base de données
                 ?>
             </div>
         </section>
