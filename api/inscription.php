@@ -43,14 +43,25 @@ function addInscription()
             return;
         }
 
-        // Vérifier que l'activité existe
-        $checkQuery = "SELECT id_activite FROM ACTIVITE WHERE id_activite = :id";
+        // Vérifier que l'activité existe et récupérer nb_places_max
+        $checkQuery = "SELECT id_activite, nb_places_max FROM ACTIVITE WHERE id_activite = :id";
         $checkStmt  = $conn->prepare($checkQuery);
         $checkStmt->execute([':id' => $id_activite]);
-        if (!$checkStmt->fetch()) {
+        $activite = $checkStmt->fetch(PDO::FETCH_ASSOC);
+
+        if (!$activite) {
             echo json_encode([
                 'status'         => 0,
                 'status_message' => 'Activité introuvable'
+            ]);
+            return;
+        }
+
+        // Vérifier qu'il reste des places
+        if ($activite['nb_places_max'] <= 0) {
+            echo json_encode([
+                'status'         => 0,
+                'status_message' => 'Plus de places disponibles pour cette activité.'
             ]);
             return;
         }
@@ -72,12 +83,19 @@ function addInscription()
         ]);
 
         if ($success) {
+            // Décrémenter nb_places_max dans ACTIVITE
+            $updateQuery = "UPDATE ACTIVITE SET nb_places_max = nb_places_max - 1 WHERE id_activite = :id";
+            $updateStmt  = $conn->prepare($updateQuery);
+            $updateStmt->execute([':id' => $id_activite]);
+
             echo json_encode([
                 'status'         => 1,
                 'status_message' => 'Vous êtes bien inscrit.',
-                'id_inscription' => $conn->lastInsertId()
+                'id_inscription' => $conn->lastInsertId(),
+                'places_restantes' => $activite['nb_places_max'] - 1
             ]);
-        } else {
+        }
+         else {
             echo json_encode([
                 'status'         => 0,
                 'status_message' => 'Erreur lors de l\'inscription.'
