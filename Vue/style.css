@@ -1,504 +1,57 @@
-/* =====================
-   Reset & Base
-   ===================== */
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/* ===== Couleur principale GSB ===== */
+:root { --gsb: #1a6b4a; --gsb-dark: #155a3d; }
 
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #f4f7f9;
-    color: #2c3e50;
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
+.gsb-navbar         { background-color: var(--gsb) !important; }
+.gsb-hero           { background: linear-gradient(135deg, var(--gsb) 0%, #2e9e6d 100%); }
+.gsb-border         { border-color: var(--gsb) !important; }
+.gsb-img-placeholder { background: linear-gradient(135deg, var(--gsb), #2e9e6d); color: #fff; }
 
-/* =====================
-   Header & Nav
-   ===================== */
-header {
-    background-color: #1a6b4a;
+/* ===== Badge lieu / famille ===== */
+.gsb-badge {
+    background-color: var(--gsb);
     color: #fff;
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-
-header h1 {
-    font-size: 1.6rem;
-    padding: 1rem 0;
-    letter-spacing: 0.5px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 0.5rem;
-}
-
-nav ul li a {
-    display: block;
-    color: #d4edda;
-    text-decoration: none;
-    padding: 0.6rem 1rem;
-    border-radius: 4px;
-    font-size: 0.95rem;
-    transition: background 0.2s, color 0.2s;
-}
-
-nav ul li a:hover {
-    background-color: rgba(255,255,255,0.2);
-    color: #fff;
-}
-
-/* =====================
-   Main
-   ===================== */
-main {
-    flex: 1;
-    max-width: 1100px;
-    width: 100%;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-}
-
-/* =====================
-   Section Hero
-   ===================== */
-#hero {
-    background: linear-gradient(135deg, #1a6b4a 0%, #2e9e6d 100%);
-    color: #fff;
-    border-radius: 10px;
-    padding: 2.5rem 2rem;
-    box-shadow: 0 4px 12px rgba(26,107,74,0.3);
-}
-
-#hero h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
-}
-
-#hero p {
-    font-size: 1rem;
-    opacity: 0.92;
-    max-width: 720px;
-}
-
-/* =====================
-   Section Services
-   ===================== */
-#services h2,
-#infos h2 {
-    font-size: 1.4rem;
-    color: #1a6b4a;
-    margin-bottom: 1.2rem;
-    border-left: 4px solid #1a6b4a;
-    padding-left: 0.6rem;
-}
-
-#services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.2rem;
-}
-
-.service-card {
-    background: #fff;
-    border-radius: 8px;
-    padding: 1.4rem 1.2rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    border-top: 4px solid #2e9e6d;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-}
-
-.service-card h3 {
-    font-size: 1rem;
-    margin-bottom: 0.6rem;
-    color: #1a6b4a;
-}
-
-.service-card p {
-    font-size: 0.9rem;
-    color: #555;
-}
-
-/* =====================
-   Section Infos pratiques
-   ===================== */
-#infos {
-    background: #fff;
-    border-radius: 8px;
-    padding: 1.6rem 1.4rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-}
-
-#content p {
-    margin-bottom: 0.6rem;
-    font-size: 0.95rem;
-    color: #444;
-}
-
-/* =====================
-   Footer
-   ===================== */
-footer {
-    background-color: #1a6b4a;
-    color: #c8e6c9;
-    text-align: center;
-    padding: 1rem 2rem;
-    font-size: 0.85rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4rem;
-}
-
-footer ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-}
-
-footer ul li a {
-    color: #a5d6a7;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-footer ul li a:hover {
-    color: #fff;
-}
-
-/* =====================
-   Page Médicaments
-   ===================== */
-.page-title {
-    text-align: center;
-    color: #1a6b4a;
-    font-size: 1.8rem;
-    margin: 2rem 0 1.5rem;
-    letter-spacing: 0.5px;
-}
-
-.cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto 3rem;
-    padding: 0 1.5rem;
-}
-
-.card {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    width: 280px;
-    overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.14);
-}
-
-.card-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    background-color: #e2e8f0;
-}
-
-.card-image-placeholder {
-    width: 100%;
-    height: 180px;
-    background: linear-gradient(135deg, #1a6b4a, #2e9e6d);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 48px;
-}
-
-.card-body {
-    padding: 20px;
-}
-
-.card-famille {
-    display: inline-block;
-    background-color: #e6f4ee;
-    color: #1a6b4a;
     font-size: 0.72rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.5px;
     padding: 4px 10px;
     border-radius: 20px;
-    margin-bottom: 10px;
-}
-
-.card-nom {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #1a202c;
-    margin-bottom: 8px;
-}
-
-.card-description {
-    font-size: 0.88rem;
-    color: #718096;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-.card-actions {
-    display: flex;
-}
-
-.btn {
-    flex: 1;
-    padding: 9px 0;
-    border: none;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.btn-selectionner {
-    background-color: #1a6b4a;
-    color: #fff;
-}
-
-.btn-selectionner:hover {
-    background-color: #155a3d;
-}
-
-.page-center {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.btn-retour {
     display: inline-block;
-    color: #1a6b4a;
-    text-decoration: none;
-    font-size: 0.9rem;
 }
 
-.btn-retour:hover {
-    text-decoration: underline;
+/* ===== Boutons ===== */
+.btn-success,
+.btn-success:focus {
+    background-color: var(--gsb);
+    border-color: var(--gsb);
+    color: #fff;
 }
-
-.detail-card {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    overflow: hidden;
-    width: 100%;
+.btn-success:hover {
+    background-color: var(--gsb-dark);
+    border-color: var(--gsb-dark);
+    color: #fff;
 }
-
-.card-date {
-    font-size: 0.88rem;
-    color: #555;
-    margin-bottom: 6px;
+.btn-outline-success {
+    color: var(--gsb);
+    border-color: var(--gsb);
 }
-
-.card-places {
-    font-size: 0.88rem;
-    color: #555;
-    margin-bottom: 16px;
-}
-
-/* =====================
-   Formulaire inscription
-   ===================== */
-.inscription-form {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    padding: 2rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1.4rem;
-}
-
-.form-title {
-    font-size: 1.3rem;
-    color: #1a6b4a;
-    border-left: 4px solid #1a6b4a;
-    padding-left: 0.6rem;
-    margin-bottom: 0.2rem;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-}
-
-.form-group label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #2c3e50;
-}
-
-.form-group input {
-    padding: 0.65rem 0.9rem;
-    border: 1.5px solid #cbd5e0;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-family: inherit;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    outline: none;
-    width: 100%;
-}
-
-.form-group input:focus {
-    border-color: #1a6b4a;
-    box-shadow: 0 0 0 3px rgba(26,107,74,0.1);
-}
-
-.inscription-form .btn {
-    flex: none;
-    width: 100%;
-    padding: 0.75rem;
-    font-size: 1rem;
-    border-radius: 10px;
-    margin-top: 0.4rem;
-}
-
-@media (max-width: 600px) {
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* =====================
-   Tableau inscrits
-   ===================== */
-.inscrits-table-wrapper {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    padding: 1.6rem 2rem;
-    width: 100%;
-}
-
-.inscrits-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-    font-size: 0.9rem;
-}
-
-.inscrits-table thead tr {
-    background-color: #1a6b4a;
+.btn-outline-success:hover {
+    background-color: var(--gsb);
+    border-color: var(--gsb);
     color: #fff;
 }
 
-.inscrits-table th {
-    padding: 10px 14px;
-    text-align: left;
+/* ===== Tableau ===== */
+.gsb-thead th {
+    background-color: var(--gsb);
+    color: #fff;
     font-weight: 600;
-    letter-spacing: 0.4px;
 }
 
-.inscrits-table th:first-child {
-    border-radius: 8px 0 0 0;
+/* ===== Focus inputs ===== */
+.form-control:focus {
+    border-color: var(--gsb);
+    box-shadow: 0 0 0 0.2rem rgba(26, 107, 74, 0.2);
 }
 
-.inscrits-table th:last-child {
-    border-radius: 0 8px 0 0;
-}
-
-.inscrits-table td {
-    padding: 10px 14px;
-    border-bottom: 1px solid #e2e8f0;
-    color: #2c3e50;
-}
-
-.inscrits-table tbody tr:last-child td {
-    border-bottom: none;
-}
-
-.inscrits-table tbody tr:hover {
-    background-color: #f0faf5;
-}
-
-.empty-state {
-    text-align: center;
-    color: #718096;
-    font-size: 1rem;
-    padding: 3rem 0;
-    width: 100%;
-}
-
-/* =====================
-   Responsive
-   ===================== */
-@media (max-width: 600px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0.8rem 1rem;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        gap: 0.3rem;
-    }
-
-    #hero h2 {
-        font-size: 1.4rem;
-    }
-
-    #services-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* =====================
-   Cards Activités
-   ===================== */
-.card-date {
-    font-size: 0.85rem;
-    color: #1a6b4a;
-    font-weight: 600;
-    margin-bottom: 6px;
-}
-
-.card-places {
-    font-size: 0.85rem;
-    color: #718096;
-    margin-bottom: 16px;
-}
+/* ===== Carte border-top ===== */
+.card.gsb-card { border-top: 4px solid var(--gsb); }
