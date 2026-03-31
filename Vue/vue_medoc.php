@@ -28,7 +28,7 @@
         echo '<p class="empty-state">Aucun médicament disponible.</p>';
     } else {
         for ($i = 0; $i < count($string_decode); $i++) {
-            $med = $string_decode[$i];
+            $med         = $string_decode[$i];
             $nom         = htmlspecialchars($med["nom"]);
             $description = htmlspecialchars($med["description"]);
             $famille     = htmlspecialchars($med["famille"]);
@@ -45,9 +45,10 @@
                     <div class="card-nom">' . $nom . '</div>
                     <div class="card-description">' . $description . '</div>
                     <div class="card-actions">
-                        <form action="index.php" method="post" style="display:contents">
-                            <input type="hidden" name="id_medicament" value="' . $id . '">
-                            <button class="btn btn-selectionner" name="actionMedoc" value="selectionner">Sélectionner</button>
+                        <form action="index.php" method="GET" style="display:contents">
+                            <input type="hidden" name="page" value="medoc_id">
+                            <input type="hidden" name="id" value="' . $id . '">
+                            <button class="btn btn-selectionner" type="submit">Voir le détail</button>
                         </form>
                     </div>
                 </div>
