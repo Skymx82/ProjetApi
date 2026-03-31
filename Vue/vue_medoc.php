@@ -22,7 +22,7 @@
 
     <div class="cards-container">
     <?php
-    $string_decode = json_decode($medicaments, true);
+    $string_decode = $medicaments;
 
     for ($i = 0; $i < count($string_decode); $i++) {
         $med = $string_decode[$i];
