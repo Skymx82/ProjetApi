@@ -8,11 +8,11 @@ USE `pharmacie`;
 -- MEDICAMENT
 -- ------------------------------------------------------------
 INSERT INTO `MEDICAMENT` (`nom`, `description`, `famille`, `image`) VALUES
-('Paracétamol',   'Analgésique et antipyrétique courant, utilisé contre la douleur et la fièvre.',          'Analgésique',       'paracetamol.jpg'),
-('Ibuprofène',    'Anti-inflammatoire non stéroïdien (AINS) utilisé contre la douleur et l\'inflammation.', 'Anti-inflammatoire', 'ibuprofene.jpg'),
-('Amoxicilline',  'Antibiotique de la famille des pénicillines, utilisé contre les infections bactériennes.','Antibiotique',      'amoxicilline.jpg'),
-('Oméprazole',    'Inhibiteur de la pompe à protons, réduit l\'acidité gastrique.',                         'Gastroprotecteur',  'omeprazole.jpg'),
-('Aspirine',      'Analgésique, antipyrétique et anti-agrégant plaquettaire.',                              'Analgésique',       'aspirine.jpg');
+('Paracétamol',   'Analgésique et antipyrétique courant, utilisé contre la douleur et la fièvre.',          'Analgésique',       'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/2023_Doreta_75_mg_%2B_650_mg.jpg/640px-2023_Doreta_75_mg_%2B_650_mg.jpg'),
+('Ibuprofène',    'Anti-inflammatoire non stéroïdien (AINS) utilisé contre la douleur et l\'inflammation.', 'Anti-inflammatoire', 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/RexallDG.jpg/640px-RexallDG.jpg'),
+('Amoxicilline',  'Antibiotique de la famille des pénicillines, utilisé contre les infections bactériennes.','Antibiotique',      'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Amoxicillin_500mg_capsules_on_a_plate_%28Sandoz%29.jpg/640px-Amoxicillin_500mg_capsules_on_a_plate_%28Sandoz%29.jpg'),
+('Oméprazole',    'Inhibiteur de la pompe à protons, réduit l\'acidité gastrique.',                         'Gastroprotecteur',  'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Omeprazole_20mg.jpg/640px-Omeprazole_20mg.jpg'),
+('Aspirine',      'Analgésique, antipyrétique et anti-agrégant plaquettaire.',                              'Analgésique',       'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Regular_strength_enteric_coated_aspirin_tablets.jpg/640px-Regular_strength_enteric_coated_aspirin_tablets.jpg');
 
 -- ------------------------------------------------------------
 -- EFFET_THERAPEUTIQUE

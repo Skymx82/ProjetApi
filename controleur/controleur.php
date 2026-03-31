@@ -39,7 +39,7 @@
   // ============================================================
   function getAllMedoc()
   {
-    $medicaments = selectMedoc(); // modèle
+    $medicament = selectMedoc(); // modèle
     include("Vue/vue_medoc.php");
   }
 

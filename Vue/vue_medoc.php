@@ -22,7 +22,7 @@
 
     <div class="cards-container">
     <?php
-    $string_decode = $medicaments ?? [];
+    $string_decode = $medicament ?? [];
 
     if (empty($string_decode)) {
         echo '<p class="empty-state">Aucun médicament disponible.</p>';
