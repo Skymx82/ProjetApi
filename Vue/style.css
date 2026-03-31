@@ -502,3 +502,124 @@ footer ul li a:hover {
     color: #718096;
     margin-bottom: 16px;
 }
+
+/* =====================
+   Page Mentions légales
+   ===================== */
+.droits-container {
+    max-width: 900px;
+    width: 100%;
+    margin: 2rem auto 3rem;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.droits-section {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.droits-subtitle {
+    font-size: 1.2rem;
+    color: #1a6b4a;
+    border-left: 4px solid #1a6b4a;
+    padding-left: 0.6rem;
+}
+
+.droits-text {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.7;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.droits-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.droits-table thead tr {
+    background-color: #1a6b4a;
+    color: #fff;
+}
+
+.droits-table th {
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+
+.droits-table th:first-child { border-radius: 8px 0 0 0; }
+.droits-table th:last-child  { border-radius: 0 8px 0 0; }
+
+.droits-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #2c3e50;
+    vertical-align: middle;
+}
+
+.droits-table tbody tr:last-child td { border-bottom: none; }
+.droits-table tbody tr:hover { background-color: #f0faf5; }
+
+.med-badge {
+    margin-right: 6px;
+}
+
+.licence-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.licence-cc-sa { background-color: #fff3cd; color: #856404; }
+.licence-cc    { background-color: #cce5ff; color: #004085; }
+.licence-pd    { background-color: #d4edda; color: #155724; }
+
+.licences-legend {
+    background-color: #f4f7f9;
+    border-radius: 10px;
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.legend-title {
+    font-size: 1rem;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.legend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.legend-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.legend-item p {
+    font-size: 0.83rem;
+    color: #555;
+    line-height: 1.5;
+}
