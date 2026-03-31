@@ -28,10 +28,11 @@
                 private string $description,
                 private \DateTime $date,
                 private string $lieu,
-                private string $nb_place_max
+                private string $nb_place_max,
+                private string $id_activite
             ){}
 
-            public function render(): string {
+           public function render(): string {
                 return "
                     <div class='card'>
                         <div class='card-image-placeholder'>🏃</div>
@@ -42,7 +43,11 @@
                             <div class='card-date'>📅 " . $this->date->format('d/m/Y') . "</div>
                             <div class='card-places'>🪑 Places disponibles : " . htmlspecialchars($this->nb_place_max) . "</div>
                             <div class='card-actions'>
-                                <button class='btn btn-selectionner'>S'inscrire</button>
+                                <form action='index.php' method='GET' style='display:contents'>
+                                    <input type='hidden' name='page' value='activite_id'>
+                                    <input type='hidden' name='id' value='" . htmlspecialchars($this->id_activite) . "'>
+                                    <button class='btn btn-selectionner' type='submit'>S'inscrire</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -58,7 +63,9 @@
                     $activite['description'],
                     new DateTime($activite['date_activite']),
                     $activite['lieu'],
-                    (string)$activite['nb_places_max']
+                    (string)$activite['nb_places_max'],
+                    (string)$activite['id_activite']
+                    
                 );
                 echo $card->render();
             }

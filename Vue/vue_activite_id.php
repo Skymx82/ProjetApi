@@ -19,10 +19,10 @@
     </header>
     <a href="/?page=activite">← Retour à la liste</a>
 
-    <h1><?= htmlspecialchars($medicament['nom']) ?></h1>
-    <p><strong>Description :</strong> <?= htmlspecialchars($medicament['description']) ?></p>
-    <p><strong>Lieu :</strong>    <?= htmlspecialchars($medicament['lieu']) ?></p>
-    <p><strong>Nombre de place :</strong> <?= htmlspecialchars($medicament['nb_places_max']) ?></p>
+    <h1><?= htmlspecialchars($activite['nom']) ?></h1>
+    <p><strong>Description :</strong> <?= htmlspecialchars($activite['description']) ?></p>
+    <p><strong>Lieu :</strong>    <?= htmlspecialchars($activite['lieu']) ?></p>
+    <p><strong>Nombre de place :</strong> <?= htmlspecialchars($activite['nb_places_max']) ?></p>
 
     <footer>
         <p>&copy; <?php echo date('Y'); ?> - Pharmacie GSB | Tous droits réservés</p>
