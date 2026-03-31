@@ -9,7 +9,7 @@
     );
     $context = stream_context_create($options);
     $medicaments = file_get_contents($url, false, $context);
-    return $medicaments;
+     return json_decode($medicaments, true); // ✅ Convertit le JSON en tableau PHP
   }
 
   // Retourne un seul médicament par id
@@ -23,7 +23,7 @@
     );
     $context = stream_context_create($options);
     $medicament = file_get_contents($url, false, $context);
-    return $medicament;
+     return json_decode($medicaments, true); // ✅ Convertit le JSON en tableau PHP
   }
 
   // Retourne toutes les activites
