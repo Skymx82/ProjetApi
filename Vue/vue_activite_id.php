@@ -34,6 +34,31 @@
         </div>
     </main>
 
+    <form method="POST" action="index.php" class="inscription-form">
+        <h2 class="form-title">S'inscrire à cette activité</h2>
+        <input type="hidden" name="actionInscription" value="inscrire">
+        <input type="hidden" name="id_activite" value="<?= $data['id_activite'] ?>">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="mail">Email</label>
+            <input type="email" id="mail" name="mail" placeholder="exemple@email.com" required>
+        </div>
+        <div class="form-group">
+            <label for="ville">Ville</label>
+            <input type="text" id="ville" name="ville" placeholder="Votre ville" required>
+        </div>
+        <button type="submit" class="btn btn-selectionner">S'inscrire</button>
+    </form>
+
     <footer>
         <p>&copy; <?php echo date('Y'); ?> - Pharmacie GSB | Tous droits réservés</p>
     </footer>
