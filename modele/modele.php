@@ -118,10 +118,10 @@
     return json_decode($result, true) ?? [];
   }
 
-  function insertInscription($nom, $prenom, $mail)
+  function insertInscription($nom, $prenom, $mail, $id_activite)
   {
     $url = 'http://127.0.0.1/ProjetApi/ProjetApi/api/inscription.php';
-    $data = array('nom_participant' => $nom, 'prenom_participant' => $prenom, 'email' => $mail);
+    $data = array('nom_participant' => $nom, 'prenom_participant' => $prenom, 'email' => $mail, 'id_activite' => $id_activite);
 
     $options = array(
       'http' => array(

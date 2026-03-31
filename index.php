@@ -6,7 +6,9 @@ if (isset($_POST["actionInscription"]))
 {
 	if ($_POST["actionInscription"]=="inscrire")
 	{
-		addInscription() ;
+		addInscription();
+		header("Location: index.php?page=activite");
+		exit;
 	}
 }
 
