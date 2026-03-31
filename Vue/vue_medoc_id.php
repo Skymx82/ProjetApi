@@ -5,173 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php $data = json_decode($medicament, true)[0]; ?>
     <title><?= htmlspecialchars($data['nom']) ?> - Pharmacie GSB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="Vue/style.css">
-    <style>
-        /* ---- Sections enrichies ---- */
-        .detail-sections {
-            max-width: 900px;
-            margin: 2rem auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            padding: 0 1rem;
-        }
-
-        .section-bloc {
-            background: #fff;
-            border-radius: 12px;
-            padding: 1.5rem 1.75rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,.08);
-        }
-
-        .section-titre {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: .5rem;
-        }
-
-        /* Badges listes */
-        .badge-liste {
-            display: flex;
-            flex-wrap: wrap;
-            gap: .5rem;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: .35rem .85rem;
-            border-radius: 999px;
-            font-size: .85rem;
-            font-weight: 500;
-        }
-
-        .badge-vert  { background: #d1fae5; color: #065f46; }
-        .badge-rouge { background: #fee2e2; color: #991b1b; }
-
-        /* Cartes interaction */
-        .interaction-card {
-            border-left: 4px solid #f59e0b;
-            background: #fffbeb;
-            border-radius: 0 8px 8px 0;
-            padding: .75rem 1rem;
-            margin-bottom: .75rem;
-        }
-
-        .interaction-card:last-child { margin-bottom: 0; }
-
-        .interaction-med {
-            font-weight: 700;
-            color: #92400e;
-            margin-bottom: .25rem;
-        }
-
-        .interaction-desc {
-            font-size: .9rem;
-            color: #555;
-        }
-
-        .empty-info {
-            color: #9ca3af;
-            font-style: italic;
-            font-size: .9rem;
-        }
-    </style>
 </head>
-<body>
-    <header>
-        <h1>Pharmacie GSB</h1>
-        <nav>
-            <ul>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="index.php?page=medoc">Médicament</a></li>
-                <li><a href="index.php?page=activite">Activités</a></li>
-                <li><a href="index.php?page=droits">Mentions légales</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="d-flex flex-column min-vh-100 bg-light">
 
-    <main>
-        <a href="index.php?page=medoc" class="btn-retour">← Retour aux médicaments</a>
-
-        <!-- ── Bloc principal ── -->
-        <div class="detail-container">
-
-            <div class="detail-image-col">
-                <?php if (!empty($data['image'])): ?>
-                    <img class="detail-image"
-                         src="<?= htmlspecialchars($data['image']) ?>"
-                         alt="<?= htmlspecialchars($data['nom']) ?>">
-                <?php else: ?>
-                    <div class="card-image-placeholder" style="height:120px;font-size:60px;">💊</div>
-                <?php endif; ?>
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style="background-color:#1a6b4a;">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4" href="index.php">Pharmacie GSB</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.php">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.php?page=medoc">Médicaments</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.php?page=activite">Activités</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.php?page=droits">Mentions légales</a></li>
+                </ul>
             </div>
-
-            <div class="detail-info-col">
-                <span class="card-famille"><?= htmlspecialchars($data['famille']) ?></span>
-                <h2 class="detail-nom"><?= htmlspecialchars($data['nom']) ?></h2>
-                <p class="detail-description"><?= htmlspecialchars($data['description']) ?></p>
-            </div>
-
         </div>
+    </nav>
 
-        <!-- ── Sections enrichies ── -->
-        <div class="detail-sections">
+    <main class="container my-4 flex-grow-1">
+        <div class="mx-auto" style="max-width:860px;">
+
+            <a href="index.php?page=medoc" class="btn btn-outline-success btn-sm mb-4">← Retour aux médicaments</a>
+
+            <!-- Bloc principal -->
+            <div class="card shadow-sm mb-4">
+                <div class="row g-0">
+                    <div class="col-md-4 d-flex align-items-center justify-content-center p-3"
+                         style="background:linear-gradient(135deg,#1a6b4a,#2e9e6d); border-radius:.375rem 0 0 .375rem; min-height:200px;">
+                        <?php if (!empty($data['image'])): ?>
+                            <img src="<?= htmlspecialchars($data['image']) ?>"
+                                 alt="<?= htmlspecialchars($data['nom']) ?>"
+                                 class="img-fluid rounded"
+                                 style="max-height:200px; object-fit:cover;">
+                        <?php else: ?>
+                            <span style="font-size:5rem;">💊</span>
+                        <?php endif; ?>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body p-4">
+                            <span class="gsb-badge mb-2"><?= htmlspecialchars($data['famille']) ?></span>
+                            <h2 class="card-title fw-bold mt-2"><?= htmlspecialchars($data['nom']) ?></h2>
+                            <p class="text-muted"><?= htmlspecialchars($data['description']) ?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Effets thérapeutiques -->
-            <div class="section-bloc">
-                <div class="section-titre">✅ Effets thérapeutiques</div>
-                <?php if (!empty($data['effets_therapeutiques'])): ?>
-                    <ul class="badge-liste">
-                        <?php foreach ($data['effets_therapeutiques'] as $effet): ?>
-                            <li class="badge badge-vert"><?= htmlspecialchars($effet) ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                <?php else: ?>
-                    <p class="empty-info">Aucun effet thérapeutique renseigné.</p>
-                <?php endif; ?>
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="fw-semibold mb-3">✅ Effets thérapeutiques</h5>
+                    <?php if (!empty($data['effets_therapeutiques'])): ?>
+                        <div class="d-flex flex-wrap gap-2">
+                            <?php foreach ($data['effets_therapeutiques'] as $effet): ?>
+                                <span class="badge rounded-pill px-3 py-2" style="background-color:#d1fae5;color:#065f46;font-size:.85rem;font-weight:500;">
+                                    <?= htmlspecialchars($effet) ?>
+                                </span>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php else: ?>
+                        <p class="text-muted fst-italic mb-0">Aucun effet thérapeutique renseigné.</p>
+                    <?php endif; ?>
+                </div>
             </div>
 
             <!-- Effets secondaires -->
-            <div class="section-bloc">
-                <div class="section-titre">⚠️ Effets secondaires</div>
-                <?php if (!empty($data['effets_secondaires'])): ?>
-                    <ul class="badge-liste">
-                        <?php foreach ($data['effets_secondaires'] as $effet): ?>
-                            <li class="badge badge-rouge"><?= htmlspecialchars($effet) ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                <?php else: ?>
-                    <p class="empty-info">Aucun effet secondaire renseigné.</p>
-                <?php endif; ?>
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="fw-semibold mb-3">⚠️ Effets secondaires</h5>
+                    <?php if (!empty($data['effets_secondaires'])): ?>
+                        <div class="d-flex flex-wrap gap-2">
+                            <?php foreach ($data['effets_secondaires'] as $effet): ?>
+                                <span class="badge rounded-pill px-3 py-2" style="background-color:#fee2e2;color:#991b1b;font-size:.85rem;font-weight:500;">
+                                    <?= htmlspecialchars($effet) ?>
+                                </span>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php else: ?>
+                        <p class="text-muted fst-italic mb-0">Aucun effet secondaire renseigné.</p>
+                    <?php endif; ?>
+                </div>
             </div>
 
             <!-- Interactions -->
-<div class="section-bloc">
-    <div class="section-titre">🔁 Interactions médicamenteuses</div>
-    <?php if (!empty($data['interactions'])): ?>
-        <?php foreach ($data['interactions'] as $inter): ?>
-            <div class="interaction-card">
-                <div class="interaction-desc">
-                    <?= htmlspecialchars($inter['description']) ?>
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="fw-semibold mb-3">🔁 Interactions médicamenteuses</h5>
+                    <?php if (!empty($data['interactions'])): ?>
+                        <div class="d-flex flex-column gap-2">
+                            <?php foreach ($data['interactions'] as $inter): ?>
+                                <div class="p-3 rounded" style="border-left:4px solid #f59e0b;background:#fffbeb;">
+                                    <p class="mb-0 small text-secondary"><?= htmlspecialchars($inter['description']) ?></p>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php else: ?>
+                        <p class="text-muted fst-italic mb-0">Aucune interaction connue.</p>
+                    <?php endif; ?>
                 </div>
             </div>
-        <?php endforeach; ?>
-    <?php else: ?>
-        <p class="empty-info">Aucune interaction connue.</p>
-    <?php endif; ?>
-</div>
 
         </div>
     </main>
 
-    <footer>
-        <p>&copy; <?php echo date('Y'); ?> - Pharmacie GSB | Tous droits réservés</p>
+    <footer class="text-white text-center py-3 mt-4" style="background-color:#1a6b4a;">
+        <p class="mb-0">&copy; <?php echo date('Y'); ?> - Pharmacie GSB | Tous droits réservés</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
