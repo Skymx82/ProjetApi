@@ -43,12 +43,29 @@
     include("Vue/vue_medoc.php");
   }
 
+    // ✅ APRÈS
   function getOneMedoc()
-  {
-    $id = $_GET["id"];
-    $medicament = selectMedocById($id); // modèle
-    include("Vue/vue_medoc.php");
-  }
+{
+  $id = (int)$_GET["id"];
+
+  // Médicament de base
+  $medResult = selectMedocById($id);
+  $med = isset($medResult[0]) ? $medResult[0] : $medResult;
+
+  // Effets thérapeutiques → tableau de libellés
+  $effetsThera = json_decode(selectEffetTherapeutiqueById($id), true) ?? [];
+  $med['effets_therapeutiques'] = array_column($effetsThera, 'libelle');
+
+  // Effets secondaires → tableau de libellés
+  $effetsSec = json_decode(selectEffetSecondaireById($id), true) ?? [];
+  $med['effets_secondaires'] = array_column($effetsSec, 'libelle');
+
+  // Interactions → tableau brut de l'API
+  $med['interactions'] = json_decode(selectInteractionById($id), true) ?? [];
+
+  $medicament = json_encode([$med]);
+  include("Vue/vue_medoc_id.php");
+}
 
   // ============================================================
   // EFFETS THERAPEUTIQUES
@@ -83,4 +100,5 @@
   function acceuil(){
     include("Vue/index.php");
   }
+  
 ?>
