@@ -11,7 +11,7 @@
     $medicament = file_get_contents($url, false, $context);
      return json_decode($medicament, true); // ✅ Convertit le JSON en tableau PHP
   }
-
+  
   // Retourne un seul médicament par id
   function selectMedocById($id)
   {
