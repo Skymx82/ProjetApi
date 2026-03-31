@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activités</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Activités - Pharmacie GSB</title>
+    <link rel="stylesheet" href="Vue/style.css">
 </head>
 <body>
     <header>
-        <h1>Activités</h1>
+        <h1>Pharmacie GSB</h1>
         <nav>
             <ul>
                 <li><a href="index.php">Accueil</a></li>
@@ -17,60 +17,59 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <section>
-          
-        </section>
-        <section>
-            <h2>Liste des activités</h2>
-            <div id="content">
-                <?php
-                  class Card {
-                    public function __construct(
-                      private string $nom,
-                      private string $description,
-                      private \DateTime $date,
-                      private string $lieu,
-                      private string $nb_place_max
-                    ){}
-                    
-                    public function render(): string {
-                        return "
-                            <div class='card'>
-                                <h2>{$this->nom}</h2>
-                                <p>{$this->description}</p>
-                                <p>{$this->date->format('d/m/Y')}</p>
-                                <p>{$this->lieu}</p>
-                                <p>Places disponibles : {$this->nb_place_max}</p>
-                                <input type='submit' value=\"S'inscrire\" />
+
+    <h1 class="page-title">Nos activités</h1>
+
+    <div class="cards-container">
+        <?php
+        class Card {
+            public function __construct(
+                private string $nom,
+                private string $description,
+                private \DateTime $date,
+                private string $lieu,
+                private string $nb_place_max
+            ){}
+
+            public function render(): string {
+                return "
+                    <div class='card'>
+                        <div class='card-image-placeholder'>🏃</div>
+                        <div class='card-body'>
+                            <span class='card-famille'>" . htmlspecialchars($this->lieu) . "</span>
+                            <div class='card-nom'>" . htmlspecialchars($this->nom) . "</div>
+                            <div class='card-description'>" . htmlspecialchars($this->description) . "</div>
+                            <div class='card-date'>📅 " . $this->date->format('d/m/Y') . "</div>
+                            <div class='card-places'>🪑 Places disponibles : " . htmlspecialchars($this->nb_place_max) . "</div>
+                            <div class='card-actions'>
+                                <button class='btn btn-selectionner'>S'inscrire</button>
                             </div>
-                        ";
-                    }
-                  }
+                        </div>
+                    </div>
+                ";
+            }
+        }
 
-                  // $activites vient du controller (getAllActivite)
-                  $liste = json_decode($activites, true);
+        $liste = is_array($activites) ? $activites : json_decode($activites, true);
+        if ($liste && count($liste) > 0) {
+            foreach ($liste as $activite) {
+                $card = new Card(
+                    $activite['nom'],
+                    $activite['description'],
+                    new DateTime($activite['date_activite']),
+                    $activite['lieu'],
+                    (string)$activite['nb_places_max']
+                );
+                echo $card->render();
+            }
+        } else {
+            echo "<p style='text-align:center;color:#718096;'>Aucune activité disponible.</p>";
+        }
+        ?>
+    </div>
 
-                  if ($liste && count($liste) > 0) {
-                      foreach ($liste as $activite) {
-                          $card = new Card(
-                              $activite['nom'],
-                              $activite['description'],
-                              new DateTime($activite['date_activite']),
-                              $activite['lieu'],
-                              $activite['nb_place_max']
-                          );
-                          echo $card->render();
-                      }
-                  } else {
-                      echo "<p>Aucune activité disponible.</p>";
-                  }
-                ?>
-            </div>
-        </section>
-    </main>
     <footer>
-        <p>&copy; <?php echo date('Y'); ?> - ProjetApi</p>
+        <p>&copy; <?php echo date('Y'); ?> - Pharmacie GSB | Tous droits réservés</p>
     </footer>
 </body>
 </html>
