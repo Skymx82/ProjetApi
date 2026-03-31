@@ -1,6 +1,6 @@
 <?php
     // Connexion à la BD
-    include("db_connect.php");
+    include("connect.php");
     $request_method = $_SERVER["REQUEST_METHOD"];
 
     switch($request_method)
