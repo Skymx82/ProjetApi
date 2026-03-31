@@ -28,10 +28,11 @@
 
   function addInscription()
   {
-    $nom    = $_POST["nom_participant"];
-    $prenom = $_POST["prenom_participant"];
-    $mail   = $_POST["email"];
-    insertInscription($nom, $prenom, $mail); // modèle
+    $nom         = $_POST["nom_participant"];
+    $prenom      = $_POST["prenom_participant"];
+    $mail        = $_POST["email"];
+    $id_activite = $_POST["id_activite"];
+    insertInscription($nom, $prenom, $mail, $id_activite); // modèle
   }
 
   // ============================================================
