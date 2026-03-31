@@ -13,7 +13,7 @@
   {
     $id = $_GET["id"];
     $activite = selectActiviteById($id); // modèle
-    include("Vue/vue_activite.php");
+    include("Vue/vue_activite_id.php");
   }
 
   // ============================================================
