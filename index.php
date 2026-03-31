@@ -20,7 +20,11 @@ if ($page == "medoc") {
     getOneActivite();
 }elseif($page == "medoc_id"){
     getOneMedoc();
-}else {
+}
+elseif ($page == "droits") {
+    include("Vue/vue_droits.php");
+}
+else {
     Acceuil();
 }
 ?>

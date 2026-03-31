@@ -15,6 +15,7 @@
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="index.php?page=medoc">Médicament</a></li>
                 <li><a href="index.php?page=activite">Activités</a></li>
+                <li><a href="index.php?page=droits">Mentions légales</a></li>
             </ul>
         </nav>
     </header>
