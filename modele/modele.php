@@ -8,8 +8,8 @@
       'method' => 'GET')
     );
     $context = stream_context_create($options);
-    $medicaments = file_get_contents($url, false, $context);
-     return json_decode($medicaments, true); // ✅ Convertit le JSON en tableau PHP
+    $medicament = file_get_contents($url, false, $context);
+     return json_decode($medicament, true); // ✅ Convertit le JSON en tableau PHP
   }
 
   // Retourne un seul médicament par id
@@ -23,7 +23,7 @@
     );
     $context = stream_context_create($options);
     $medicament = file_get_contents($url, false, $context);
-     return json_decode($medicaments, true); // ✅ Convertit le JSON en tableau PHP
+     return json_decode($medicament, true); // ✅ Convertit le JSON en tableau PHP
   }
 
   // Retourne toutes les activites
