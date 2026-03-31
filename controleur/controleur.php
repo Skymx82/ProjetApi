@@ -13,7 +13,8 @@
   {
     $id = $_GET["id"];
     $activite = selectActiviteById($id); // modèle
-    include("Vue/vue_activite_id.php");;
+    $inscriptions = selectInscriptionByActivite($id); // modèle
+    include("Vue/vue_activite_id.php");
   }
 
   // ============================================================
@@ -27,11 +28,10 @@
 
   function addInscription()
   {
-    $nom    = $_POST["nom"];
-    $prenom = $_POST["prenom"];
-    $mail   = $_POST["mail"];
-    $ville  = $_POST["ville"];
-    insertInscription($nom, $prenom, $mail, $ville); // modèle
+    $nom    = $_POST["nom_participant"];
+    $prenom = $_POST["prenom_participant"];
+    $mail   = $_POST["email"];
+    insertInscription($nom, $prenom, $mail); // modèle
   }
 
   // ============================================================

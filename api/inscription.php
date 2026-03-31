@@ -11,12 +11,13 @@
         
 
         case 'GET' :
-            if(!empty($_GET["id"]))
-            {
-                $id=intval($_GET["id"]);
+            if (!empty($_GET["id_activite"])) {
+                $id = intval($_GET["id_activite"]);
+                getInscriptionByActivite($id);
+            } elseif (!empty($_GET["id"])) {
+                $id = intval($_GET["id"]);
                 getInscription($id);
-            }
-            else{
+            } else {
                 getInscription();
             }
             break;
@@ -30,7 +31,6 @@ function addInscription()
         $nom_participant    = $_POST["nom_participant"]    ?? '';
         $prenom_participant = $_POST["prenom_participant"] ?? '';
         $email              = $_POST["email"]              ?? '';
-        $lieu               = $_POST["lieu"]               ?? '';
         $date_inscription   = $_POST["date_inscription"]   ?? '';
         $id_activite        = isset($_POST["id_activite"]) ? intval($_POST["id_activite"]) : 0;
 
@@ -68,18 +68,17 @@ function addInscription()
 
         // Insertion avec requête préparée (sécurisé contre les injections SQL)
         $query = "INSERT INTO INSCRIPTION
-                    (nom_participant, prenom_participant, email, lieu, date_inscription, id_activite)
+                    (nom_participant, prenom_participant, email, date_inscription, id_activite)
                   VALUES
-                    (:nom, :prenom, :email, :lieu, :date_inscription, :id_activite)";
+                    (:nom, :prenom, :email, :date_inscription, :id_activite)";
 
         $stmt = $conn->prepare($query);
         $success = $stmt->execute([
-            ':nom'            => $nom_participant,
-            ':prenom'         => $prenom_participant,
-            ':email'          => $email,
-            ':lieu'           => $lieu,
+            ':nom'              => $nom_participant,
+            ':prenom'           => $prenom_participant,
+            ':email'            => $email,
             ':date_inscription' => $date_inscription ?: date('Y-m-d'),
-            ':id_activite'    => $id_activite
+            ':id_activite'      => $id_activite
         ]);
 
         if ($success) {
@@ -101,6 +100,16 @@ function addInscription()
                 'status_message' => 'Erreur lors de l\'inscription.'
             ]);
         }
+    }
+
+    function getInscriptionByActivite($id_activite)
+    {
+        global $conn;
+        $query = "SELECT nom_participant, prenom_participant, email FROM INSCRIPTION WHERE id_activite = :id ORDER BY nom_participant";
+        $stmt = $conn->prepare($query);
+        $stmt->execute([':id' => $id_activite]);
+        $response = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($response, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
     }
 
     function getInscription($id = null)
