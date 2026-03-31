@@ -16,7 +16,9 @@ if ($page == "medoc") {
     getAllMedoc();
 } elseif ($page == "activite") {
     getAllActivite();
-} else {
+} elseif($page == "activite_id"){
+    getOneActivite()
+}else {
     Acceuil();
 }
 ?>
