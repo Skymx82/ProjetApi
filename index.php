@@ -17,7 +17,7 @@ if ($page == "medoc") {
 } elseif ($page == "activite") {
     getAllActivite();
 } elseif($page == "activite_id"){
-    getOneActivite()
+    getOneActivite();
 }else {
     Acceuil();
 }

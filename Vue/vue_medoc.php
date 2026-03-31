@@ -22,33 +22,37 @@
 
     <div class="cards-container">
     <?php
-    $string_decode = $medicaments;
+    $string_decode = $medicaments ?? [];
 
-    for ($i = 0; $i < count($string_decode); $i++) {
-        $med = $string_decode[$i];
-        $nom         = htmlspecialchars($med["nom"]);
-        $description = htmlspecialchars($med["description"]);
-        $famille     = htmlspecialchars($med["famille"]);
-        $image       = htmlspecialchars($med["image"]);
-        $id          = htmlspecialchars($med["id_medicament"]);
-        echo '
-        <div class="card">
-            ' . ($image
-                ? '<img class="card-image" src="' . $image . '" alt="' . $nom . '">'
-                : '<div class="card-image-placeholder">💊</div>'
-            ) . '
-            <div class="card-body">
-                <span class="card-famille">' . $famille . '</span>
-                <div class="card-nom">' . $nom . '</div>
-                <div class="card-description">' . $description . '</div>
-                <div class="card-actions">
-                    <form action="index.php" method="post" style="display:contents">
-                        <input type="hidden" name="id_medicament" value="' . $id . '">
-                        <button class="btn btn-selectionner" name="actionMedoc" value="selectionner">Sélectionner</button>
-                    </form>
+    if (empty($string_decode)) {
+        echo '<p class="empty-state">Aucun médicament disponible.</p>';
+    } else {
+        for ($i = 0; $i < count($string_decode); $i++) {
+            $med = $string_decode[$i];
+            $nom         = htmlspecialchars($med["nom"]);
+            $description = htmlspecialchars($med["description"]);
+            $famille     = htmlspecialchars($med["famille"]);
+            $image       = htmlspecialchars($med["image"]);
+            $id          = htmlspecialchars($med["id_medicament"]);
+            echo '
+            <div class="card">
+                ' . ($image
+                    ? '<img class="card-image" src="' . $image . '" alt="' . $nom . '">'
+                    : '<div class="card-image-placeholder">💊</div>'
+                ) . '
+                <div class="card-body">
+                    <span class="card-famille">' . $famille . '</span>
+                    <div class="card-nom">' . $nom . '</div>
+                    <div class="card-description">' . $description . '</div>
+                    <div class="card-actions">
+                        <form action="index.php" method="post" style="display:contents">
+                            <input type="hidden" name="id_medicament" value="' . $id . '">
+                            <button class="btn btn-selectionner" name="actionMedoc" value="selectionner">Sélectionner</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        </div>';
+            </div>';
+        }
     }
     ?>
     </div>
