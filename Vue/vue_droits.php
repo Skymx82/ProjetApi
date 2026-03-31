@@ -54,7 +54,6 @@
                                 Paracétamol
                             </td>
                             <td>Pexels.com</td>
-                            <td>Pexels.com</td>
                             <td>
                                 <span class="licence-badge licence-pd">Domaine public</span>
                             </td>
