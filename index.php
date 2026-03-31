@@ -18,6 +18,8 @@ if ($page == "medoc") {
     getAllActivite();
 } elseif($page == "activite_id"){
     getOneActivite();
+}elseif($page == "medoc_id"){
+    getOneMedoc();
 }else {
     Acceuil();
 }
