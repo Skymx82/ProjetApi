@@ -58,39 +58,38 @@
                                     <th>Médicament</th>
                                     <th>Source</th>
                                     <th>Licence</th>
-                                    <th>Type de licence</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>💊 Paracétamol</td>
-                                    <td>Wikimedia Commons</td>
-                                    <td><span class="badge rounded-pill px-3 py-2" style="background-color:#fff3cd;color:#856404;">CC BY-SA 4.0</span></td>
-                                    <td class="text-muted small">Creative Commons Attribution-Share Alike 4.0</td>
+                                    <td>Pexels.com</td>
+                                    <span class="badge rounded-pill px-3 py-2 mb-2" style="background-color:#d4edda;color:#155724;">Domaine public</span>
+                                    <td class="text-muted small">Image libre de droits, aucune restriction d'utilisation ou de redistribution.</td>
                                 </tr>
                                 <tr>
                                     <td>💊 Ibuprofène</td>
-                                    <td>Wikimedia Commons</td>
-                                    <td><span class="badge rounded-pill px-3 py-2" style="background-color:#fff3cd;color:#856404;">CC BY-SA 4.0</span></td>
-                                    <td class="text-muted small">Creative Commons Attribution-Share Alike 4.0</td>
+                                    <td>Pexels.com</td>
+                                    <span class="badge rounded-pill px-3 py-2 mb-2" style="background-color:#d4edda;color:#155724;">Domaine public</span>
+                                    <td class="text-muted small">Image libre de droits, aucune restriction d'utilisation ou de redistribution.</td>
                                 </tr>
                                 <tr>
                                     <td>💊 Amoxicilline</td>
-                                    <td>Wikimedia Commons</td>
-                                    <td><span class="badge rounded-pill px-3 py-2" style="background-color:#cce5ff;color:#004085;">CC BY 4.0</span></td>
-                                    <td class="text-muted small">Creative Commons Attribution 4.0</td>
+                                    <td>Pexels.com</td>
+                                    <span class="badge rounded-pill px-3 py-2 mb-2" style="background-color:#d4edda;color:#155724;">Domaine public</span>
+                                    <td class="text-muted small">Image libre de droits, aucune restriction d'utilisation ou de redistribution.</td>
                                 </tr>
                                 <tr>
                                     <td>💊 Oméprazole</td>
-                                    <td>Wikimedia Commons</td>
-                                    <td><span class="badge rounded-pill px-3 py-2" style="background-color:#d4edda;color:#155724;">Domaine public</span></td>
-                                    <td class="text-muted small">Public Domain — aucune restriction d'utilisation</td>
+                                    <td>Pexels.com</td>
+                                    <span class="badge rounded-pill px-3 py-2 mb-2" style="background-color:#d4edda;color:#155724;">Domaine public</span>
+                                    <td class="text-muted small">Image libre de droits, aucune restriction d'utilisation ou de redistribution.</td>
                                 </tr>
                                 <tr>
                                     <td>💊 Aspirine</td>
-                                    <td>Wikimedia Commons</td>
-                                    <td><span class="badge rounded-pill px-3 py-2" style="background-color:#fff3cd;color:#856404;">CC BY-SA 4.0</span></td>
-                                    <td class="text-muted small">Creative Commons Attribution-Share Alike 4.0</td>
+                                    <td>Pexels.com</td>
+                                    <span class="badge rounded-pill px-3 py-2 mb-2" style="background-color:#d4edda;color:#155724;">Domaine public</span>
+                                    <td class="text-muted small">Image libre de droits, aucune restriction d'utilisation ou de redistribution.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -100,14 +99,6 @@
                     <div class="rounded p-4 mt-4" style="background-color:#f4f7f9;">
                         <h3 class="fs-6 fw-bold mb-3">Explication des licences</h3>
                         <div class="row g-3">
-                            <div class="col-md-4">
-                                <span class="badge rounded-pill px-3 py-2 mb-2" style="background-color:#fff3cd;color:#856404;">CC BY-SA 4.0</span>
-                                <p class="text-muted small mb-0">Partage et adaptation autorisés, à condition de créditer l'auteur et de redistribuer sous la même licence.</p>
-                            </div>
-                            <div class="col-md-4">
-                                <span class="badge rounded-pill px-3 py-2 mb-2" style="background-color:#cce5ff;color:#004085;">CC BY 4.0</span>
-                                <p class="text-muted small mb-0">Partage et adaptation libres, à condition de créditer l'auteur.</p>
-                            </div>
                             <div class="col-md-4">
                                 <span class="badge rounded-pill px-3 py-2 mb-2" style="background-color:#d4edda;color:#155724;">Domaine public</span>
                                 <p class="text-muted small mb-0">Image libre de droits, aucune restriction d'utilisation ou de redistribution.</p>
