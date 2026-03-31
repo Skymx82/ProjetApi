@@ -109,10 +109,19 @@
     return $interactions;
   }
 
-  function insertInscription($nom, $prenom, $mail, $ville)
+  function selectInscriptionByActivite($id)
+  {
+    $url = "http://127.0.0.1/ProjetApi/ProjetApi/api/inscription.php?id_activite=" . $id;
+    $options = array('http' => array('header' => "Content_type: application/x-www-form-urlencoded\r\n", 'method' => 'GET'));
+    $context = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+    return json_decode($result, true) ?? [];
+  }
+
+  function insertInscription($nom, $prenom, $mail)
   {
     $url = 'http://127.0.0.1/ProjetApi/ProjetApi/api/inscription.php';
-    $data = array('nom' => $nom, 'prenom' => $prenom, 'mail' => $mail, 'ville' => $ville);
+    $data = array('nom_participant' => $nom, 'prenom_participant' => $prenom, 'email' => $mail);
 
     $options = array(
       'http' => array(
