@@ -20,6 +20,7 @@
                     <li class="nav-item"><a class="nav-link" href="index.php">Accueil</a></li>
                     <li class="nav-item"><a class="nav-link active" href="index.php?page=medoc">Médicaments</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.php?page=activite">Activités</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.php?page=droits">Mentions légales</a></li>
                 </ul>
             </div>
         </div>
