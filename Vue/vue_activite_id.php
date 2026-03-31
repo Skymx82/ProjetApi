@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($activite['nom']) ?></title>
+    <?php $data = json_decode($activite, true)[0]; ?>
+    <title><?= htmlspecialchars($data['nom']) ?></title>
     <link rel="stylesheet" href="Vue/style.css">
 </head>
 <body>
@@ -17,12 +18,21 @@
             </ul>
         </nav>
     </header>
-    <a href="/?page=activite">← Retour à la liste</a>
 
-    <h1><?= htmlspecialchars($medicament['nom']) ?></h1>
-    <p><strong>Description :</strong> <?= htmlspecialchars($medicament['description']) ?></p>
-    <p><strong>Lieu :</strong>    <?= htmlspecialchars($medicament['lieu']) ?></p>
-    <p><strong>Nombre de place :</strong> <?= htmlspecialchars($medicament['nb_places_max']) ?></p>
+    <main>
+        <a href="index.php?page=activite" class="btn-retour">← Retour à la liste</a>
+
+        <div class="detail-card">
+            <div class="card-image-placeholder" style="height:120px;font-size:60px;">🏃</div>
+            <div class="card-body">
+                <span class="card-famille"><?= htmlspecialchars($data['lieu']) ?></span>
+                <div class="card-nom"><?= htmlspecialchars($data['nom']) ?></div>
+                <div class="card-description"><?= htmlspecialchars($data['description']) ?></div>
+                <div class="card-date">📅 <?= (new DateTime($data['date_activite']))->format('d/m/Y') ?></div>
+                <div class="card-places">🪑 Places disponibles : <?= htmlspecialchars($data['nb_places_max']) ?></div>
+            </div>
+        </div>
+    </main>
 
     <footer>
         <p>&copy; <?php echo date('Y'); ?> - Pharmacie GSB | Tous droits réservés</p>
