@@ -47,7 +47,7 @@
                 <div class="card-body">
                     <h2 class="fs-5 fw-semibold mb-3" style="border-left:4px solid #1a6b4a; padding-left:.6rem;">Droits des images</h2>
                     <p class="text-muted mb-3">
-                        Les images utilisées sur ce site proviennent de <strong>Wikimedia Commons</strong>
+                        Les images utilisées sur ce site proviennent de <strong>Pexels.com</strong>
                         et sont soumises aux licences indiquées ci-dessous.
                     </p>
 
