@@ -65,31 +65,31 @@
                                     <td>💊 Paracétamol</td>
                                     <td>Pexels.com</td>
                                     <span class="badge rounded-pill px-3 py-2 mb-2" style="background-color:#d4edda;color:#155724;">Domaine public</span>
-                                    <td class="text-muted small">Image libre de droits, aucune restriction d'utilisation ou de redistribution.</td>
+                                    <td class="text-muted small">Domaine public</td>
                                 </tr>
                                 <tr>
                                     <td>💊 Ibuprofène</td>
                                     <td>Pexels.com</td>
                                     <span class="badge rounded-pill px-3 py-2 mb-2" style="background-color:#d4edda;color:#155724;">Domaine public</span>
-                                    <td class="text-muted small">Image libre de droits, aucune restriction d'utilisation ou de redistribution.</td>
+                                    <td class="text-muted small">Domaine public</td>
                                 </tr>
                                 <tr>
                                     <td>💊 Amoxicilline</td>
                                     <td>Pexels.com</td>
                                     <span class="badge rounded-pill px-3 py-2 mb-2" style="background-color:#d4edda;color:#155724;">Domaine public</span>
-                                    <td class="text-muted small">Image libre de droits, aucune restriction d'utilisation ou de redistribution.</td>
+                                    <td class="text-muted small">Domaine public</td>
                                 </tr>
                                 <tr>
                                     <td>💊 Oméprazole</td>
                                     <td>Pexels.com</td>
                                     <span class="badge rounded-pill px-3 py-2 mb-2" style="background-color:#d4edda;color:#155724;">Domaine public</span>
-                                    <td class="text-muted small">Image libre de droits, aucune restriction d'utilisation ou de redistribution.</td>
+                                    <td class="text-muted small">Domaine public</td>
                                 </tr>
                                 <tr>
                                     <td>💊 Aspirine</td>
                                     <td>Pexels.com</td>
                                     <span class="badge rounded-pill px-3 py-2 mb-2" style="background-color:#d4edda;color:#155724;">Domaine public</span>
-                                    <td class="text-muted small">Image libre de droits, aucune restriction d'utilisation ou de redistribution.</td>
+                                    <td class="text-muted small">Domaine public</td>
                                 </tr>
                             </tbody>
                         </table>
